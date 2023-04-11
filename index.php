@@ -169,7 +169,7 @@
 									<div class="panel-body">
 									<h3 class="text-semibold mt-none text-center">Not voted</h3>
 										<p class="text-center label-primary" style="font-size:25px;padding:10px;border-radius:3px">0.12 %</p>
-										<p class="text-center">Out of 33000</p>
+										<p class="text-center">Out of 330000</p>
 									</div>
 								</section>
 							</div>
