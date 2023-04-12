@@ -194,7 +194,7 @@ function add_coordinator(){
     $coor_value = $_POST['get_option'];
     $brgy_value = "";
     if($coor_value == ''){
-
+        echo "No Result";
     }else{
     $brgy_value .= '
     <table class="table">
@@ -221,9 +221,10 @@ function add_coordinator(){
         }
     }
     $brgy_value .= '</tbody></table>';
-}
     $brgy_value .= "";
     echo $brgy_value;
+}
+    
 
 }
 
@@ -233,6 +234,9 @@ function add_leader(){
     $brgy_id = $_POST['brgy_id'];
     $coor_value = $_POST['get_option'];
     $brgy_value = "";
+    if($coor_value == ''){
+        echo "No Result";
+    }else{
     $brgy_value .= '
     <table class="table">
     <thead>
@@ -272,6 +276,7 @@ function add_leader(){
             ";
     $brgy_value .= "";
     echo $brgy_value;
+    }
 
 }
 

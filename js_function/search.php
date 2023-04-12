@@ -1,29 +1,46 @@
 <script>
-    function searchCoor(){
-        $(document).keydown('#searchCoor', function(){
-            var searchCoorVal = $('#searchCoor').val();
+    function searchCoor(event){
+        const searchTerm = event.target.value;
+        // Perform search using searchTerm
+        console.log(searchTerm);
             $.ajax({
                 type: 'post',
                 url: 'searchCoor.php',
-                data:{searchCoorVal:searchCoorVal, brgyId: <?php echo $brgy_id;?>},
+                data:{searchCoorVal:searchTerm, brgyId: <?php echo $brgy_id ?>},
                 success: function(val){
                     document.getElementById("residents_breakdown").innerHTML=val;
                 }
             });
-        })
     }
-    function searchLead(){
-        $('#searchLeader').keyup(function(){
-            var searchLeaderVal = $('#searchLeader').val();
-            // console.log(searchLeaderVal);
-            // $.ajax({
-            //     type: 'post',
-            //     url: '',
-            //     data:{searchLeaderVal:searchLeaderVal},
-            //     success: function(val){
-            //         document.getElementById("residents_breakdown").innerHTML=val;
-            //     }
-            // });
-        })
+    function searchLead(event){
+        const searchTerm = event.target.value;
+        var coorId = $('#name1').val();
+        
+            $.ajax({
+                type: 'post',
+                url: 'searchLead.php',
+                data:{searchLeaderVal:searchTerm, brgyId: <?php echo $brgy_id ?>, coorId:coorId},
+                success: function(val){
+                    document.getElementById("residents_breakdown").innerHTML=val;
+                }
+            });
+    }
+
+    function searchMem(event){
+        const searchTerm = event.target.value;
+        var leadId = $('#lead_ids').val();
+        // console.log(searchTerm);
+            $.ajax({
+                type: 'post',
+                url: 'searchMem.php',
+                data:{
+                    searchMemberVal:searchTerm,
+                    brgyId: <?php echo $brgy_id; ?>,
+                    leadId:leadId
+                },
+                success: function(val){
+                    document.getElementById("residents_breakdown").innerHTML=val;
+                }
+            });
     }
 </script>

@@ -40,6 +40,7 @@ ul.ui-front {
 					<?php
 						include('include/header.php');
 					?>
+					<h3 id="positionNames"></h3>
 					<h3 id='position'></h3>
 					<h3 id='coor_hidden'></h3>
 					<h3 id='lead_hidden'></h3>
@@ -246,8 +247,6 @@ ul.ui-front {
 			updateMember();
 			backCoor();
 			backLead();
-			searchCoor();
-			searchLead();
 		});
 		</script>
 	</body>
